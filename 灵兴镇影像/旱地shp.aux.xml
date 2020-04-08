@@ -1,0 +1,6 @@
+<PAMDataset>
+  <SRS>PROJCS[&quot;CGCS2000_3_Degree_GK_Zone_35&quot;,GEOGCS[&quot;GCS_China_Geodetic_Coordinate_System_2000&quot;,DATUM[&quot;China_2000&quot;,SPHEROID[&quot;CGCS2000&quot;,6378137.0,298.257222101]],PRIMEM[&quot;Greenwich&quot;,0.0],UNIT[&quot;Degree&quot;,0.0174532925199433]],PROJECTION[&quot;Transverse_Mercator&quot;],PARAMETER[&quot;false_easting&quot;,35500000.0],PARAMETER[&quot;false_northing&quot;,0.0],PARAMETER[&quot;central_meridian&quot;,105.0],PARAMETER[&quot;scale_factor&quot;,1.0],PARAMETER[&quot;latitude_of_origin&quot;,0.0],UNIT[&quot;Meter&quot;,1.0]]</SRS>
+  <Metadata domain="Esri">
+    <MDI key="PyramidResamplingType">NEAREST</MDI>
+  </Metadata>
+</PAMDataset>
