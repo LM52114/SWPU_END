@@ -20,8 +20,8 @@ def readTif(fileName):
         print(fileName+"文件无法打开")
     return dataset
 print("提取数据中......")
-dataset = readTif(r"灵兴镇影像/灵兴1.tif")
-dataset_label=readTif(r"灵兴镇影像/shp转栅格/栅格合并4.tif")
+dataset = readTif(r'D:/Github/SWPU_END/灵兴镇影像/灵兴1.tif')
+dataset_label=readTif(r'D:/Github/SWPU_END/灵兴镇影像/shp转栅格/栅格合并4.tif')
 im_label_width=dataset_label.RasterXSize
 im_label_height=dataset_label.RasterYSize
 im_width = dataset.RasterXSize #栅格矩阵的列数
@@ -69,13 +69,13 @@ data_L = new_datawithlabel_array[:,-1]#拿到lable
 
 new = np.column_stack((data_D,data_L))#将两个矩阵按列合并
 new_ = pd.DataFrame(new)#将new转换为表的形式
-new_.to_csv(r'C:/Users/asus/Desktop/毕业设计/Code/test/KSC.csv',header = False , index = False)#存储为csv文件
+new_.to_csv(r'D:/Github/SWPU_END/KSC.csv',header = False , index = False)#存储为csv文件
 
 print("表格已经存储，开始训练模型......")
 
 
 #split train and test data
-data = pd.read_csv('C:/Users/asus/Desktop/毕业设计/Code/test/KSC.csv', header= None)
+data = pd.read_csv('D:/Github/SWPU_END/KSC.csv', header= None)
 data = data.values
 data_D = data [:,:-1]
 data_L = data[:,-1]
@@ -96,7 +96,7 @@ print("模型保存结束，开始预测......")
 # mat文件的导入
 
 
-testdata = np.genfromtxt('C:/Users/asus/Desktop/毕业设计/Code/test/KSC.csv',delimiter=',')
+testdata = np.genfromtxt('D:/Github/SWPU_END/KSC.csv',delimiter=',')
 data_test = testdata[:,:-1]
 label_test = testdata[:,-1]
 

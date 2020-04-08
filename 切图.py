@@ -55,15 +55,15 @@ class GRID:
         del dataset
 
 if __name__ == "__main__":
-    os.chdir(r'D:\学习资料\test\灵兴镇影像\植被')                        #切换路径到待处理图像所在文件夹
-    proj,geotrans,data = GRID().read_img('植被.tif')        #读数据
+    os.chdir(r'D:\Github\SWPU_END\灵兴镇影像')                        #切换路径到待处理图像所在文件夹
+    proj,geotrans,data = GRID().read_img('灵兴1.tif')        #读数据
     print(proj)
     print(geotrans)
     #print(data)
     print(data.shape)
     channel,width,height = data.shape
-    size=32
+    size=256
     for i in range(width//size):#切割成256*256小图
         for j in range(height//size):
             cur_image = data[:,i*size:(i+1)*size,j*size:(j+1)*size]
-            GRID().write_img('D:/学习资料/test/灵兴镇影像/植被/植被切图/植被{}_{}.tif'.format(str(i).zfill(2),str(j).zfill(3)),proj,geotrans,cur_image) ##写数据
+            GRID().write_img('D:\Github\SWPU_END/灵兴镇影像/切割/{}_{}.tif'.format(str(i).zfill(2),str(j).zfill(3)),proj,geotrans,cur_image) ##写数据

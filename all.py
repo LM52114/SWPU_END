@@ -6,8 +6,8 @@ from scipy.io import loadmat
 '''
 get the KSC data
 '''
-import_image = loadmat(r'C:/Users/asus/Desktop/毕业设计/Code/test/KSC.mat')['paviaU']
-output_image = loadmat(r'C:/Users/asus/Desktop/毕业设计/Code/test/KSC_gt.mat')['paviaU_gt']
+import_image = loadmat(r'D:/Github/SWPU_END/KSC.mat')['paviaU']
+output_image = loadmat(r'D:/Github/SWPU_END/KSC_gt.mat')['paviaU_gt']
 
 #input_image.shape#:(610, 340, 103)长610，高340，波段数103，每一处的值代表像元值
 # # output_image.shape#:(610, 340)每一处的值代表类型编号
@@ -87,7 +87,7 @@ data_L = new_datawithlabel_array[:,-1]#拿到lable
 import pandas as pd
 new = np.column_stack((data_D,data_L))#将两个矩阵按列合并
 new_ = pd.DataFrame(new)#将new转换为表的形式
-new_.to_csv(r'C:/Users/asus/Desktop/毕业设计/Code/test/KSC.csv',header = False , index = False)#存储为csv文件
+new_.to_csv(r'D:/Github/SWPU_END/KSC.csv',header = False , index = False)#存储为csv文件
 #the above get the csv data
 
 '''
@@ -99,7 +99,7 @@ from sklearn.model_selection import KFold , train_test_split
 from sklearn import metrics
 
 #split train and test data
-data = pd.read_csv('C:/Users/asus/Desktop/毕业设计/Code/test/KSC.csv', header= None)
+data = pd.read_csv('D:/Github/SWPU_END/KSC.csv', header= None)
 data = data.values
 data_D = data [:,:-1]
 data_L = data[:,-1]
@@ -131,11 +131,11 @@ import spectral
 
 
 # KSC
-input_image = loadmat('C:/Users/asus/Desktop/毕业设计/Code/test/KSC.mat')['paviaU']
-output_image = loadmat('C:/Users/asus/Desktop/毕业设计/Code/test/KSC_gt.mat')['paviaU_gt']
+input_image = loadmat('D:/Github/SWPU_END/KSC.mat')['paviaU']
+output_image = loadmat('D:/Github/SWPU_END/KSC_gt.mat')['paviaU_gt']
 
 
-testdata = np.genfromtxt('C:/Users/asus/Desktop/毕业设计/Code/test/KSC.csv',delimiter=',')
+testdata = np.genfromtxt('D:/Github/SWPU_END/KSC.csv',delimiter=',')
 data_test = testdata[:,:-1]
 label_test = testdata[:,-1]
 
